@@ -4,6 +4,7 @@ import { DashboardComponent } from './Application/dashboard/dashboard.component'
 import { LoginComponent } from './Application/login/login.component';
 import { SignupComponent } from './Application/signup/signup.component';
 import { MapComponent } from './Application/map/map.component';
+import { LandingComponent } from './Application/landing/landing.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path:"map",
     component:MapComponent
+  },
+  {
+    path:"landing",
+    component:LandingComponent
   },
   {
     path: '',
