@@ -11,6 +11,7 @@ import { SignupComponent } from './Application/signup/signup.component';
 import { MapComponent } from './Application/map/map.component';
 import { LandingComponent } from './Application/landing/landing.component';
 import { UsersComponent } from './users/users.component';
+import { WatchesComponent } from './Application/watches/watches.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UsersComponent } from './users/users.component';
     SignupComponent,
     MapComponent,
     LandingComponent,
-    UsersComponent
+    UsersComponent,
+    WatchesComponent
   ],
   imports: [
     BrowserModule,
