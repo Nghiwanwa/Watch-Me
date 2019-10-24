@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  time = new Date();
+
   constructor() { }
 
   ngOnInit() {
+    setInterval(()=>{
+      this.time = new Date();
+    },1)
   }
 
+ 
 }
