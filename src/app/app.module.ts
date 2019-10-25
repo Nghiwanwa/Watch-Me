@@ -13,6 +13,7 @@ import { LandingComponent } from './Application/landing/landing.component';
 import { UsersComponent } from './users/users.component';
 import { ParentsComponent } from './Application/parents/parents.component';
 import { WatchesComponent } from './Application/watches/watches.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { WatchesComponent } from './Application/watches/watches.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

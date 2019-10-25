@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -9,12 +10,18 @@ export class NavComponent implements OnInit {
 
   time = new Date();
 
-  constructor() { }
+  constructor(public route:Router) { }
 
   ngOnInit() {
     setInterval(()=>{
       this.time = new Date();
     },1)
+  }
+
+
+
+  goTo(link){
+      this.route.navigate([link]);
   }
 
  
