@@ -11,7 +11,11 @@ import { SignupComponent } from './Application/signup/signup.component';
 import { MapComponent } from './Application/map/map.component';
 import { LandingComponent } from './Application/landing/landing.component';
 import { UsersComponent } from './users/users.component';
+<<<<<<< HEAD
 import { ParentsComponent } from './Application/parents/parents.component';
+=======
+import { WatchesComponent } from './Application/watches/watches.component';
+>>>>>>> 7ff0cf86d8514229da9fef2018c914e08bf15e5e
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { ParentsComponent } from './Application/parents/parents.component';
     MapComponent,
     LandingComponent,
     UsersComponent,
+<<<<<<< HEAD
     ParentsComponent
+=======
+    WatchesComponent
+>>>>>>> 7ff0cf86d8514229da9fef2018c914e08bf15e5e
   ],
   imports: [
     BrowserModule,
