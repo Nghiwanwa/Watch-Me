@@ -6,6 +6,7 @@ import { SignupComponent } from './Application/signup/signup.component';
 import { MapComponent } from './Application/map/map.component';
 import { LandingComponent } from './Application/landing/landing.component';
 import { UsersComponent } from './users/users.component';
+import { ParentsComponent } from './Application/parents/parents.component';
 
 
 
@@ -34,6 +35,11 @@ const routes: Routes = [
     path:"users",
     component:UsersComponent
   },
+  {
+  path:"parents",
+  component:ParentsComponent
+  },
+  
   {
     path: '',
     redirectTo:'/login',
