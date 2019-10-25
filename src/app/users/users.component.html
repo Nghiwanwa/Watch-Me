@@ -23,7 +23,7 @@
                 <div class="card m-b-30">
                     <div class="card-body">
                         <div class="text-right">
-                          <a href="#editSystemUsers" class="btn btn-success" data-toggle="modal"> <span>Add Watch <i class="fa fa-user"></i> </span></a>
+                          <a href="#editSystemUsers" class="btn btn-success" data-toggle="modal"> <span>Add User<i class="fa fa-user"></i> </span></a>
                           
                       </div>
                       <br>
@@ -94,78 +94,6 @@
 
 <app-footer></app-footer>
 
-<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <div class="card">
-
-                <h5 class="card-header info-color white-text text-center py-4">
-<strong>Edit User details</strong>
-</h5>
-                <br>
-                <!--Card content-->
-                <div class="card-body px-lg-5 pt-0">
-
-                    <!-- Form -->
-                    <form class="text-center" style="color: #757575;" action="#!">
-
-                        <!-- Fullname -->
-                        <div class="md-form mt-0">
-                            <input type="email" id="materialRegisterFormEmail" class="form-control">
-                            <label for="materialRegisterFormEmail">Fullname</label>
-                        </div>
-
-                        <!-- Username -->
-                        <div class="md-form mt-0">
-                            <input type="email" id="materialRegisterFormEmail" class="form-control">
-                            <label for="materialRegisterFormEmail">Username</label>
-                        </div>
-
-                        <!-- Password -->
-                        <div class="md-form">
-                            <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
-                            <label for="materialRegisterFormPassword">Password</label>
-                            <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-    At least 8 characters and 1 digit
-</small>
-                        </div>
-
-                        <!--Confirm Password -->
-                        <div class="md-form">
-                            <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
-                            <label for="materialRegisterFormPassword">Confirm Password</label>
-                            <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-            At least 8 characters and 1 digit
-        </small>
-                        </div>
-
-                        <!-- Subject -->
-                        <label>Roles</label>
-                        <select class="browser-default custom-select mb-4">
-                            <option value="" disabled>Choose option</option>
-                            <option value="1" selected>Superuser</option>
-                            <option value="2">User</option>
-                            <option value="3">User</option>
-                            <option value="4">Supersuperuser</option>
-                        </select>
-                    </form>
-                    <!-- Form -->
-
-                </div>
-
-            </div>
-            <!-- Material form register -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary waves-effect waves-light">Add User</button>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-
 <!-- modal  -->
   <!-- Edit Modal HTML -->
   <div id="editSystemUsers" class="modal fade">
@@ -173,19 +101,16 @@
             <div class="modal-content">
                 <form>
                     <div class="modal-header">						
-                        <h4 class="modal-title">Edit  Data</h4>
+                        <h4 class="modal-title">Edit User details</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">					
                     <div class="form-row mb-4">
                             <div class="col">
                                 <!-- Card Number -->
-                                <input type="text" id="FirstName" class="form-control" required placeholder="First Name">
+                                <input type="text" id="Fullname" class="form-control" required placeholder="Fullname">
                             </div>
-                            <div class="col">
-                                <!-- Card address -->
-                                <input type="text" id="LastName" class="form-control" required placeholder="Last Name">
-                            </div>
+            
                         </div>
                         <div class="form-row mb-4">
                                 <div class="col">
@@ -211,15 +136,15 @@
                                     <div class="col">
                                             <select class="custom-select custom-select-sm">
                                                     <option selected>Gender</option>
-                                                    <option value="1">True</option>
-                                                    <option value="2">false</option>
+                                                    <option value="1">Male</option>
+                                                    <option value="2">False</option>
                                                  </select>
                                      </div>
                                     <div class="col">
                                  <select class="custom-select custom-select-sm">
                                     <option selected>Role</option>
-                                    <option value="1">True</option>
-                                    <option value="2">false</option>
+                                    <option value="1">Superuser</option>
+                                    <option value="2">User</option>
                                  </select>
                               </div>
                           </div>
@@ -238,7 +163,7 @@
             <div class="modal-content">
                 <form>
                     <div class="modal-header">						
-                        <h4 class="modal-title">Delete Employee</h4>
+                        <h4 class="modal-title">Delete User</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">					

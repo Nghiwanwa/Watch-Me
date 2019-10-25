@@ -1,4 +1,5 @@
-<app-nav></app-nav>
+<app-nav>
+    </app-nav>
     <div class="wrapper">
         <div class="container-fluid">
             <!-- Page-Title -->
@@ -10,378 +11,143 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-right">
                             <li class="breadcrumb-item"><a href="javascript:void(0);">Parents</a></li>
-                            <li class="breadcrumb-item active">Table</li>
+                            <li class="breadcrumb-item active">Table Editable</li>
                         </ol>
                     </div>
                 </div>
                 <!-- end row -->
             </div>
-
+    
             <div class="row">
-                 <div class="col-12">
+                <div class="col-12">
                     <div class="card m-b-30">
                         <div class="card-body">
-                            
-
+                          <br>
                             <table id="mainTable" class="table table-striped mb-0 table-editable">
                                 <thead>
-                                <tr>
-                                    <th>Email</th>
-                                    <th>Email</th>
-                                    <th>Number</th>
-                                    <th>Email</th>
-                                    <th>Username</th>
-                                    <th>Fullname</th>
-                                    <th>
-                                        <div class="col-sm-6 col-md-3 m-t-30">
-                                                    <div class=" text-center">
-                                                        <button type="button" class="icon-plus" data-toggle="modal" data-target="#myModal"></button>
-                                                    </div>
-                                        
-                                                    <!-- sample modal content -->
-                                                    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog">
-                                                            <div class="modal-content">
-                                                                
-                                        <div class="card">
-        
-                                            <h5 class="card-header info-color white-text text-center py-4">
-                                            <strong>Edit User details</strong>
-                                            </h5>
-                                            <br>
-                                        <!--Card content-->
-                                        <div class="card-body px-lg-5 pt-0">
-        
-                                        <!-- Form -->
-                                        <form class="text-center" style="color: #757575;" action="#!">
-                                            
-                                            <!-- Fullname -->
-                                            <div class="md-form mt-0">
-                                                    <input type="email" id="materialRegisterFormEmail" class="form-control">
-                                                    <label for="materialRegisterFormEmail">Fullname</label>
-                                                </div>
-        
-        
-                                        <!-- Username -->
-                                                <div class="md-form mt-0">
-                                                <input type="email" id="materialRegisterFormEmail" class="form-control">
-                                                <label for="materialRegisterFormEmail">Username</label>
-                                                </div>
-        
-                                        <!-- Password -->
-                                            <div class="md-form">
-                                            <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
-                                            <label for="materialRegisterFormPassword">Password</label>
-                                            <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                                                At least 8 characters and 1 digit
-                                            </small>
-                                            </div>
-
-                                             <!--Confirm Password -->
-                                             <div class="md-form">
-                                                    <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
-                                                    <label for="materialRegisterFormPassword">Confirm Password</label>
-                                                    <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                                                        At least 8 characters and 1 digit
-                                                    </small>
-                                                    </div>
-        
-                                       <!-- Subject -->
-                                    <label>Roles</label>
-                                    <select class="browser-default custom-select mb-4">
-                                        <option value="" disabled>Choose option</option>
-                                        <option value="1" selected>Superuser</option>
-                                        <option value="2">User</option>
-                                        <option value="3">User</option>
-                                        <option value="4">Supersuperuser</option>
-                                    </select>
-                                        </form>
-                                        <!-- Form -->
-        
-                                        </div>
-        
-                                        </div>
-                                        <!-- Material form register -->
-                                                                            <div class="modal-footer">
-                                                                                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                                                                                <button type="button" class="btn btn-primary waves-effect waves-light">Add User</button>
-                                                                            </div>
-                                                                        </div><!-- /.modal-content -->
-                                                                    </div><!-- /.modal-dialog -->
-                                                                </div><!-- /.modal -->
-                                                            </div>
-                                        </th>
-                                </tr>
+                                    <tr>
+                                        <th>Gender</th>
+                                        <th>Occupation</th>
+                                        <th>Adress</th>
+                                        <th>Email</th>
+                                        <th>Cellphone</th>
+                                        <th>Firstname</th>
+                                        <th>Lastname</th>
+                                        <th>Block/Unblock</th>
+                                        <th>Delete</th>
+                                       
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>Superuser</td>
-                                    <td>Paula</td>
-                                    <td>Pombili</td>
-                                    <div class="col-sm-6 col-md-3 m-t-30">
-                                            <div class=" text-center">
-                                                <button type="button" class="fa fa-edit" data-toggle="modal" data-target="#myModal"></button>
-                                            </div>
-                                
-                                            <!-- sample modal content -->
-                                            <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        
-                                <div class="card">
-
-                                    <h5 class="card-header info-color white-text text-center py-4">
-                                    <strong>Edit User details</strong>
-                                    </h5>
-                                    <br>
-                                <!--Card content-->
-                                <div class="card-body px-lg-5 pt-0">
-
-                                <!-- Form -->
-                                <form class="text-center" style="color: #757575;" action="#!">
-                                    
-                                    <!-- Fullname -->
-                                    <div class="md-form mt-0">
-                                            <input type="email" id="materialRegisterFormEmail" class="form-control">
-                                            <label for="materialRegisterFormEmail">Fullname</label>
-                                        </div>
-
-
-                                <!-- Username -->
-                                        <div class="md-form mt-0">
-                                        <input type="email" id="materialRegisterFormEmail" class="form-control">
-                                        <label for="materialRegisterFormEmail">Username</label>
-                                        </div>
-
-                                <!-- Password -->
-                                    <div class="md-form">
-                                    <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
-                                    <label for="materialRegisterFormPassword">Password</label>
-                                    <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                                        At least 8 characters and 1 digit
-                                    </small>
-                                    </div>
-
-                                     <!--Confirm Password -->
-                                     <div class="md-form">
-                                            <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
-                                            <label for="materialRegisterFormPassword">Confirm Password</label>
-                                            <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                                                At least 8 characters and 1 digit
-                                            </small>
-                                            </div>
-
-                               <!-- Subject -->
-                            <label>Roles</label>
-                            <select class="browser-default custom-select mb-4">
-                                <option value="" disabled>Choose option</option>
-                                <option value="1" selected>Superuser</option>
-                                <option value="2">User</option>
-                                <option value="3">User</option>
-                                <option value="4">Supersuperuser</option>
-                            </select>
-                                </form>
-                                <!-- Form -->
-
-                                </div>
-
-                                </div>
-                                <!-- Material form register -->
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                                                                        <button type="button" class="btn btn-primary waves-effect waves-light">Save changes</button>
-                                                                    </div>
-                                                                </div><!-- /.modal-content -->
-                                                            </div><!-- /.modal-dialog -->
-                                                        </div><!-- /.modal -->
-                                                    </div>
-                                                    <td><i class="fa fa-trash" aria-hidden="true"></i></td>    
-                                </tr>
-                                <tr>
-                                    <td>user</td>
-                                    <td>Imms</td>
-                                    <td>Immanuel</td>
-                                    <div class="col-sm-6 col-md-3 m-t-30">
-                                            <div class="text-center">
-                                                <button type="button" class="fa fa-edit" data-toggle="modal" data-target="#myModal"></button>
-                                            </div>
-                                
-                                            <!-- sample modal content -->
-                                            <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        
-                                <div class="card">
-
-                                    <h5 class="card-header info-color white-text text-center py-4">
-                                    <strong>Edit User details</strong>
-                                    </h5>
-                                    <br>
-                                <!--Card content-->
-                                <div class="card-body px-lg-5 pt-0">
-
-                                <!-- Form -->
-                                <form class="text-center" style="color: #757575;" action="#!">
-                                    
-                                    <!-- Fullname -->
-                                    <div class="md-form mt-0">
-                                            <input type="email" id="materialRegisterFormEmail" class="form-control">
-                                            <label for="materialRegisterFormEmail">Fullname</label>
-                                        </div>
-
-
-                                <!-- Username -->
-                                        <div class="md-form mt-0">
-                                        <input type="email" id="materialRegisterFormEmail" class="form-control">
-                                        <label for="materialRegisterFormEmail">Username</label>
-                                        </div>
-
-                                <!-- Password -->
-                                    <div class="md-form">
-                                    <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
-                                    <label for="materialRegisterFormPassword">Password</label>
-                                    <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                                        At least 8 characters and 1 digit
-                                    </small>
-                                    </div>
-
-                                     <!--Confirm Password -->
-                                     <div class="md-form">
-                                            <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
-                                            <label for="materialRegisterFormPassword">Confirm Password</label>
-                                            <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                                                At least 8 characters and 1 digit
-                                            </small>
-                                            </div>
-
-                               <!-- Subject -->
-                            <label>Roles</label>
-                            <select class="browser-default custom-select mb-4">
-                                <option value="" disabled>Choose option</option>
-                                <option value="1" selected>Superuser</option>
-                                <option value="2">User</option>
-                                <option value="3">User</option>
-                                <option value="4">Supersuperuser</option>
-                            </select>
-                                </form>
-                                <!-- Form -->
-
-                                </div>
-
-                                </div>
-                                <!-- Material form register -->
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                                                                        <button type="button" class="btn btn-primary waves-effect waves-light">Save changes</button>
-                                                                    </div>
-                                                                </div><!-- /.modal-content -->
-                                                            </div><!-- /.modal-dialog -->
-                                                        </div><!-- /.modal -->
-                                                    </div> 
-                                        <td><i class="fa fa-trash" aria-hidden="true"></i></td>            
-                                </tr>
-                                <tr>
-                                        <td>user</td>
-                                        <td>Dee</td>
-                                        <td>Tomas</td>
-                                        <div class="col-sm-6 col-md-3 m-t-30">
-                                                <div class = "text-center">
-                                                    <button type="button" class="fa fa-edit" data-toggle="modal" data-target="#myModal"></button>
-                                                </div>
-                                    
-                                                <!-- sample modal content -->
-                                                <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            
-                                    <div class="card">
-    
-                                        <h5 class="card-header info-color white-text text-center py-4">
-                                        <strong>Edit User details</strong>
-                                        </h5>
-                                        <br>
-                                    <!--Card content-->
-                                    <div class="card-body px-lg-5 pt-0">
-    
-                                    <!-- Form -->
-                                    <form class="text-center" style="color: #757575;" action="#!">
-                                        
-                                        <!-- Fullname -->
-                                        <div class="md-form mt-0">
-                                                <input type="email" id="materialRegisterFormEmail" class="form-control">
-                                                <label for="materialRegisterFormEmail">Fullname</label>
-                                            </div>
-    
-    
-                                    <!-- Username -->
-                                            <div class="md-form mt-0">
-                                            <input type="email" id="materialRegisterFormEmail" class="form-control">
-                                            <label for="materialRegisterFormEmail">Username</label>
-                                            </div>
-    
-                                    <!-- Password -->
-                                        <div class="md-form">
-                                        <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
-                                        <label for="materialRegisterFormPassword">Password</label>
-                                        <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                                            At least 8 characters and 1 digit
-                                        </small>
-                                        </div>
-
-                                         <!--Confirm Password -->
-                                    <div class="md-form">
-                                            <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
-                                            <label for="materialRegisterFormPassword">Confirm Password</label>
-                                            <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                                                At least 8 characters and 1 digit
-                                            </small>
-                                            </div>
-    
-                                   <!-- Subject -->
-                                <label>Roles</label>
-                                <select class="browser-default custom-select mb-4">
-                                    <option value="" disabled>Choose option</option>
-                                    <option value="1" selected>Superuser</option>
-                                    <option value="2">User</option>
-                                    <option value="3">User</option>
-                                    <option value="4">Supersuperuser</option>
-                                </select>
-                                    </form>
-                                    <!-- Form -->
-    
-                                    </div>
-    
-                                    </div>
-                                    <!-- Material form register -->
-                                                                        <div class="modal-footer">
-                                                                            <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                                                                            <button type="button" class="btn btn-primary waves-effect waves-light">Save changes</button>
-                                                                        </div>
-                                                                    </div><!-- /.modal-content -->
-                                                                </div><!-- /.modal-dialog -->
-                                                            </div><!-- /.modal -->
-                                                        </div>
-                                                   <td><i class="fa fa-trash" aria-hidden="true"></i></td>     
+                                    <tr>
+                                            <th>Male</th>
+                                            <th>Dentist</th>
+                                            <th>Otjomuise</th>
+                                            <th>paulus@gmail.com</th>
+                                            <th>0811256724</th>
+                                            <th>Lucas</th>
+                                            <th>Paulus</th>
+     
+                                        <td>
+                                                <button type="button" class="btn btn-warning" data-toggle="modal">Block</button>
+                                          </td>
+                                        <td>
+                                            <a href="#deleteSystemUsers" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
+                                        </td>
                                     </tr>
-                                            </tbody>
-                                        </table>
-
-                                    </div>
-                                </div>
-                                </div> <!-- end col -->
-                                </div> <!-- end row -->  
-
-                                </div>
-                                <!-- end container-fluid -->
-                                </div>
-                                <!-- end wrapper -->
-                
-
-
-
+                                    <tr>
+                                            <th>Female</th>
+                                            <th>Teacher</th>
+                                            <th>Ongwediva</th>
+                                            <th>mary@gmail.com</th>
+                                            <th>085255554</th>
+                                            <th>marjam</th>
+                                            <th>Haihambo</th>
+                                        <td>
+                                                <button type="button" class="btn btn-warning">Block</button>
+                                       </td>
+                                        <td>
+                                                <a href="#deleteSystemUsers" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
+                                     </td>
+                                    </tr>
+                                    <tr>
+                                            <th>Female</th>
+                                            <th>Accountant</th>
+                                            <th>Hochlandpark</th>
+                                            <th>eve@gmail.com</th>
+                                            <th>081438765</th>
+                                            <th>Eve</th>
+                                            <th>Herman</th>
+                                        <td>
+                                                <button type="button" class="btn btn-warning">Block</button>
+                                       </td>
+                                        <td>
+                                                <a href="#deleteSystemUsers" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
+                                     </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+    
+                        </div>
+                    </div>
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+    
+        </div>
+        <!-- end container-fluid -->
+    </div>
+    <!-- end wrapper -->
+    
     <script>
         $('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
     </script>
+    
+    <app-footer></app-footer>
+    
+  
+     <!-- Delete Modal HTML -->
+    <div id="deleteSystemUsers" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Delete Parent</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">					
+                            <p>?Are you sure you want to delete these Records</p>
+                            <p class="text-warning"><small>This action cannot be undone.</small></p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-danger" value="Delete">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-<app-footer></app-footer>
-
+        <!-- Block Modal HTML -->
+        <div id="blockParent" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Block Parent</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">					
+                            <p>?Are you sure you want to block these Records</p>
+                            <p class="text-warning"><small>This action cannot be undone.</small></p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-danger" value="Delete">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="/src/assets/js/fuction.js"></script>
