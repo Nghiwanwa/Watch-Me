@@ -1,1 +1,120 @@
-<p>geofences works!</p>
+<app-nav>
+    </app-nav>
+    <div class="wrapper">
+        <div class="container-fluid">
+            <!-- Page-Title -->
+            <div class="page-title-box">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <h4 class="page-title">Geofences</h4>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-right">
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Geofences</a></li>
+                            <li class="breadcrumb-item active">Table Editable</li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- end row -->
+            
+                    
+            <div class="row">
+                <div class="col-12">
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                                <form class="form-inline md-form form-sm">
+                                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                                        <button mdbBtn size="sm" gradient="aqua" rounded="true" class="my-0 waves-light" mdbWavesEffect type="submit">Search</button>
+                                    </form>
+                          <br>
+                            <table id="mainTable" class="table table-striped mb-0 table-editable">
+                                <thead>
+                                    <tr>
+                                        <th>Date Created</th>
+                                        <th>Radius</th>
+                                        <th>Latitude Cordinates</th>
+                                        <th>Longitude Cordinates</th>
+                                        <th>Parent_Id</th>
+                                        <th>Child_Id</th>
+                                        <th>Delete</th>
+                                       
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                            <th>2019/12/13</th>
+                                            <th>5m</th>
+                                            <th>60</th>
+                                            <th>90</th>
+                                            <th>1</th>
+                                            <th>1</th>
+     
+                                       <td>
+                                            <a href="#Parent" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                            <th>2020/01/01</th>
+                                            <th>100m</th>
+                                            <th>80</th>
+                                            <th>40</th>
+                                            <th>2</th>
+                                            <th>2</th>
+                                            <td>
+                                                    <a href="#Parent" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
+                                                </td>
+                                    </tr>
+                                    <tr>
+                                            <th>2010/02/01</th>
+                                            <th>225</th>
+                                            <th>60</th>
+                                            <th>55</th>
+                                            <th>3</th>
+                                            <th>3</th>
+                                        <td>
+                                            <a href="#Parent" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+    
+        </div>
+        <!-- end container-fluid -->
+    </div>
+    <!-- end wrapper -->
+    
+    <script>
+        $('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
+    </script>
+    
+    <app-footer></app-footer>
+    
+  
+     <!-- Delete Modal HTML -->
+    <div id="Parent" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Delete Geofence</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">					
+                            <p>?Are you sure you want to delete these Records</p>
+                            <p class="text-warning"><small>This action cannot be undone.</small></p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-danger" value="Delete">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="/src/assets/js/fuction.js"></script>
