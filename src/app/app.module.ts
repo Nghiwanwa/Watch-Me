@@ -14,6 +14,8 @@ import { UsersComponent } from './users/users.component';
 import { ParentsComponent } from './Application/parents/parents.component';
 import { WatchesComponent } from './Application/watches/watches.component';
 import { FormsModule } from '@angular/forms';
+import { ChildrenComponent } from './Application/parents/children/children.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     LandingComponent,
     UsersComponent,
     ParentsComponent,
-    WatchesComponent
+    WatchesComponent,
+    ChildrenComponent
   ],
   imports: [
     BrowserModule,

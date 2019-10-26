@@ -8,6 +8,7 @@ import { LandingComponent } from './Application/landing/landing.component';
 import { UsersComponent } from './users/users.component';
 import { ParentsComponent } from './Application/parents/parents.component';
 import { WatchesComponent } from './Application/watches/watches.component';
+import { ChildrenComponent } from './Application/parents/children/children.component';
 
 
 
@@ -45,7 +46,10 @@ const routes: Routes = [
   path:"parents",
   component:ParentsComponent
   },
-  
+  {
+    path:"children",
+    component:ChildrenComponent
+    },
   {
     path: '',
     redirectTo:'/login',
