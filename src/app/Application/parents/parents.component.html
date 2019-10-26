@@ -16,12 +16,16 @@
                     </div>
                 </div>
                 <!-- end row -->
-            </div>
-    
+            
+                    
             <div class="row">
                 <div class="col-12">
                     <div class="card m-b-30">
                         <div class="card-body">
+                                <form class="form-inline md-form form-sm">
+                                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                                        <button mdbBtn size="sm" gradient="aqua" rounded="true" class="my-0 waves-light" mdbWavesEffect type="submit">Search</button>
+                                    </form>
                           <br>
                             <table id="mainTable" class="table table-striped mb-0 table-editable">
                                 <thead>
@@ -49,10 +53,10 @@
                                             <th>Paulus</th>
      
                                         <td>
-                                                <button type="button" class="btn btn-warning" data-toggle="modal">Block</button>
+                                                <button type="button" class="btn btn-warning"  href="#Parent"  data-toggle="modal">Block</button>
                                           </td>
                                         <td>
-                                            <a href="#deleteSystemUsers" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
+                                            <a href="#Parent" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -63,12 +67,12 @@
                                             <th>085255554</th>
                                             <th>marjam</th>
                                             <th>Haihambo</th>
+                                            <td>
+                                                <button type="button" class="btn btn-warning"  href="#Parent"  data-toggle="modal">Block</button>
+                                          </td>
                                         <td>
-                                                <button type="button" class="btn btn-warning">Block</button>
-                                       </td>
-                                        <td>
-                                                <a href="#deleteSystemUsers" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
-                                     </td>
+                                            <a href="#Parent" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
+                                        </td>
                                     </tr>
                                     <tr>
                                             <th>Female</th>
@@ -78,16 +82,15 @@
                                             <th>081438765</th>
                                             <th>Eve</th>
                                             <th>Herman</th>
+                                            <td>
+                                                <button type="button" class="btn btn-warning"  href="#Parent"  data-toggle="modal">Block</button>
+                                          </td>
                                         <td>
-                                                <button type="button" class="btn btn-warning">Block</button>
-                                       </td>
-                                        <td>
-                                                <a href="#deleteSystemUsers" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
-                                     </td>
+                                            <a href="#Parent" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
-    
                         </div>
                     </div>
                 </div>
@@ -108,7 +111,7 @@
     
   
      <!-- Delete Modal HTML -->
-    <div id="deleteSystemUsers" class="modal fade">
+    <div id="Parent" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form>
@@ -130,7 +133,7 @@
         </div>
 
         <!-- Block Modal HTML -->
-        <div id="blockParent" class="modal fade">
+        <div id="Parent" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form>
@@ -144,7 +147,7 @@
                         </div>
                         <div class="modal-footer">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                            <input type="submit" class="btn btn-danger" value="Delete">
+                            <button input type="Block" class="btn btn-danger" value="Block">Block</button>
                         </div>
                     </form>
                 </div>

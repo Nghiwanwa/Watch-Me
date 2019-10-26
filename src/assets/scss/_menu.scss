@@ -351,10 +351,10 @@
     padding-right: 18px;
     padding-left: 40px;
     margin-left: 16px;
-    background: rgba($white, 0.1);
+    background: white;
     box-shadow: none;
     border-radius: 30px;
-    color: rgba($white, 0.70);
+    color:gray;
     width: 200px;
     border: none;
   }
@@ -364,7 +364,7 @@
     top: 9px;
     left: 26px;
     display: block;
-    color: rgba($white, 0.70);
+    color:gray;
     font-size: 11px;
     border: none;
     background-color: transparent;
@@ -378,7 +378,7 @@
 
 .app-search input {
   &::placeholder {
-      color: rgba($white, 0.70);
+      color: gray;
   }
 }
 
