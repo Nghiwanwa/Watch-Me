@@ -26,6 +26,10 @@
                                         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                                         <button mdbBtn size="sm" gradient="aqua" rounded="true" class="my-0 waves-light" mdbWavesEffect type="submit">Search</button>
                                     </form>
+                                    <div class="text-right">
+                                            <a href="#editSystemUsers" class="btn btn-success" data-toggle="modal"> <span>Add Child<i class="fa fa-user"></i> </span></a>
+                                            
+                                        </div>
                           <br>
                             <table id="mainTable" class="table table-striped mb-0 table-editable">
                                 <thead>
@@ -34,6 +38,7 @@
                                         <th>Date Of Birth</th>
                                         <th>Firstname</th>
                                         <th>Lastname</th>
+                                        <th>Edit</th>
                                         <th>Delete</th>
                                        
                                     </tr>
@@ -44,7 +49,9 @@
                                             <th>2012/06/14</th>
                                             <th>Rosalia</th>
                                             <th>Paulus</th>
-    
+                                            <td>
+                                                    <a href="#editSystemUsers" class="edit" data-toggle="modal"><i class="fa fa-edit" data-toggle="tooltip" title="Edit"></i></a>
+                                           </td>
                                         <td>
                                             <a href="#Parent" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
                                         </td>
@@ -54,6 +61,9 @@
                                             <th>2015/01/13</th>
                                             <th>Nelson</th>
                                             <th>Haihambo</th>
+                                            <td>
+                                                    <a href="#editSystemUsers" class="edit" data-toggle="modal"><i class="fa fa-edit" data-toggle="tooltip" title="Edit"></i></a>
+                                           </td>
                                         <td>
                                             <a href="#Parent" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
                                         </td>
@@ -63,6 +73,9 @@
                                             <th>2014/08/29</th>
                                             <th>Anna</th>
                                             <th>Herman</th>
+                                            <td>
+                                                    <a href="#editSystemUsers" class="edit" data-toggle="modal"><i class="fa fa-edit" data-toggle="tooltip" title="Edit"></i></a>
+                                           </td>
                                         <td>
                                             <a href="#Parent" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
                                         </td>
@@ -109,4 +122,53 @@
                 </div>
             </div>
         </div>
+        <!-- modal  -->
+
+  <!-- Edit Modal HTML -->
+  <div id="editSystemUsers" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">						
+                        <h4 class="modal-title">Edit Child's details</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">					
+                        <div class="form-row mb-4">
+                            <div class="col">
+                                <!-- Card Number -->
+                                <input type="text" id="Firstname" class="form-control" required placeholder="Firstname">
+                            </div>  
+
+                        </div>
+                        
+                        <div class="form-row mb-4">
+                                <div class="col">
+                                    <!-- user name -->
+                                    <input type="text" id="Lastname" class="form-control" required placeholder="Lastname">
+                                </div>    
+                        </div>
+                    <div class="form-row mb-4">
+                            <div class="col">
+                                    <select class="custom-select custom-select-sm">
+                                            <option selected>Gender</option>
+                                            <option value="1">Male</option>
+                                            <option value="2">False</option>
+                                         </select>
+                             </div>  
+                             <div class="col">
+                                    <!-- Date -->
+                                    <input type="date" id="Date" class="form-control" required placeholder="Date">
+                                </div>  
+                     </div>       
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="submit" class="btn btn-info" value="Save">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
         <script src="/src/assets/js/fuction.js"></script>
