@@ -1,11 +1,10 @@
 export class Children {
     _id:any;
-    firstname:string;
-    lastname:string;
-    dateofbirth:Date;
+    ftname:string;
+    ltname:string;
+    date_of_birth:Date;
     deleted:boolean;
     gender:string;
     created:Date;
-    modified:Date;
 }
 
