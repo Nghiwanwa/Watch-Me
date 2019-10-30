@@ -3,6 +3,7 @@ import { RestService } from './rest.service';
 import { User } from '../models/user';
 import { HttpClient } from '@angular/common/http';
 import { Parents } from '../models/parents';
+import { Children } from '../models/children';
 
 
 @Injectable({
@@ -16,11 +17,19 @@ export class PeopleService {
   selectedParent = new Parents();
   parents = new Array<Parents>();
 
+  selectedChildren = new Children();
+  child = new Array<Children>();
+
   roles = [
     'Super User',
     'User'
   ]
   
+  gender=[
+    'Male',
+    'Female'
+  ]
+  getWatches: any;
   constructor(private rest:RestService, private http:HttpClient) { }
 
   addUser(){
@@ -71,7 +80,7 @@ export class PeopleService {
 
   getParents(){
 
-      this.http.get<Array<Parents>>(this.rest.REST_ENDPOINT+"/parents?blocked=false").subscribe(
+      this.http.get<Array<Parents>>(this.rest.REST_ENDPOINT+"/parents").subscribe(
         parents => {
           this.parents = parents;
         }
@@ -86,11 +95,58 @@ export class PeopleService {
     )
   }
 
-  blockParents(){
+  blockParent(){
     this.selectedParent.blocked = true;
     this.http.put<Parents>(this.rest.REST_ENDPOINT+"/parents/"+this.selectedParent._id,this.selectedParent).subscribe(
       parents => {
         this.selectedParent = parents;
+        this.getParents();
+      }
+    )
+  }
+
+  unblockParent(){
+    this.selectedParent.blocked = false;
+    this.http.put<Parents>(this.rest.REST_ENDPOINT+"/parents/"+this.selectedParent._id,this.selectedParent).subscribe(
+      parents => {
+        this.selectedParent = parents;
+        this.getParents();
+      }
+    )
+  }
+
+  addChildren(){
+    this.http.post<Children>(this.rest.REST_ENDPOINT+"/children", this.selectedChildren).subscribe(
+      child => {
+        this.selectedChildren = child;
+        this.getChildren();
+      }
+    )
+  }
+
+  getChildren(){
+      this.http.get<Array<Children>>(this.rest.REST_ENDPOINT+"/children?deleted=false").subscribe(
+        child => {
+          this.child = child;
+        }
+      )
+  }
+
+  updateChildren(){
+    this.http.put<Children>(this.rest.REST_ENDPOINT+"/children/"+this.selectedChildren._id,this.selectedChildren).subscribe(
+      child => {
+        this.selectedChildren = child;
+        this.getChildren();
+      }
+    )
+  }
+
+  deleteChildren(){
+    this.selectedChildren.deleted = true;
+    this.http.put<Children>(this.rest.REST_ENDPOINT+"/children/"+this.selectedChildren._id,this.selectedChildren).subscribe(
+      child => {
+        this.selectedChildren = child;
+        this.getChildren();
       }
     )
   }

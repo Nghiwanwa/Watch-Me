@@ -1,0 +1,169 @@
+<app-nav>
+</app-nav>
+<div class="wrapper">
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="page-title-box">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <h4 class="page-title">SOS contacts</h4>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-right">
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">SOS contacts</a></li>
+                        <li class="breadcrumb-item active">Table Editable</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- end row -->
+        
+                
+        <div class="row">
+            <div class="col-12">
+                <div class="card m-b-30">
+                    <div class="card-body">
+                                <form class="form-inline md-form form-sm">
+                                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                                    <button class="btn btn-primary" type="submit">Search</button>
+                                    
+                                        <a href="javascript:;" class="btn btn-success" (click)="newUser()" data-toggle="modal" data-target="#adduser"> Add SOS contact<i class="fa fa-user"></i> </a>
+                                     
+                                </form>
+                        <table id="mainTable" class="table table-striped mb-0 table-editable">
+                            <thead>
+                                <tr>
+                                    <th>Contact Name</th>
+                                    <th>Number</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                        <td>Police</td>
+                                        <td>+264 (61) 1-0111</td>
+                                        <td>
+                                            <a href="javascript:;" (click)="peopleService.selectedChildren=child"  class="edit" data-toggle="modal" data-target="#addchild"><i class="fa fa-edit" data-toggle="tooltip" title="Edit"></i></a>
+                                        </td>
+                                        <td>
+                                            <a href="#Parent" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td>Ambulance</td>
+                                        <td>+264 (61) 21-1111</td>
+                                        <td>
+                                            <a href="javascript:;" (click)="peopleService.selectedChildren=child"  class="edit" data-toggle="modal" data-target="#addchild"><i class="fa fa-edit" data-toggle="tooltip" title="Edit"></i></a>
+                                        </td>
+                                        <td>
+                                            <a href="#Parent" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td>MVA Fund</td>
+                                        <td>+264 (61) 289-7000</td>
+                                    <td>
+                                        <a href="javascript:;" (click)="peopleService.selectedChildren=child"  class="edit" data-toggle="modal" data-target="#addchild"><i class="fa fa-edit" data-toggle="tooltip" title="Edit"></i></a>
+                                    </td>
+                                    <td>
+                                        <a href="#Parent" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                        <td>City police</td>
+                                        <td>+264 (61) 290-2239</td>
+                                    <td>
+                                        <a href="javascript:;" (click)="peopleService.selectedChildren=child"  class="edit" data-toggle="modal" data-target="#editcontact"><i class="fa fa-edit" data-toggle="tooltip" title="Edit"></i></a>
+                                    </td>
+                                    <td>
+                                        <a href="#deletecontact" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+
+    </div>
+    <!-- end container-fluid -->
+</div>
+<!-- end wrapper -->
+
+<script>
+    $('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
+</script>
+
+<app-footer></app-footer>
+
+
+  <!-- Edit Modal HTML -->
+  <div id="addcontact" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">						
+                    <h4 class="modal-title">SOS contact</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">					
+                
+                    <div class="form-row mb-4">
+                            <div class="col">
+                                <!-- user name -->
+                                <input type="text"  name="_firstname" [(ngModel)]="peopleService.selectedChildren.firstname" class="form-control" required placeholder="Firstname">
+                            </div>
+                            <div class="col">
+                                <!-- Card address -->
+                                <input type="text" name="_lastname" [(ngModel)]="peopleService.selectedChildren.lastname" class="form-control" required placeholder="Lastname">
+                            </div>
+                        </div>
+                        <div class="form-row mb-4">
+                            <div class="col">
+                                <!-- Card address -->
+                                <input type="date" name="_dateofbirth" [(ngModel)]="peopleService.selectedChildren.dateofbirth" class="form-control" required placeholder="Date of Birth">
+                            </div>
+                        </div>
+                    <div class="form-row mb-4">
+                        <div class="col">
+                            <select class="custom-select custom-select-sm" name="_gender" [(ngModel)]="peopleService.selectedChildren.gender">
+                                <option *ngFor="let gender of peopleService.gender" [value]="gender">{{gender}}</option>
+                            </select>
+                      </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal" value="Cancel"></button>
+                    <button class="btn btn-info" [hidden]="peopleService.selectedChildren._id" (click)="peopleService.addChildren();">Save</button>
+                    <button class="btn btn-info" [hidden]="!peopleService.selectedChildren._id" (click)="peopleService.updateChildren();">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Delete Modal HTML -->
+<div id="deletecontact" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">						
+                    <h4 class="modal-title">Delete contact</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">					
+                    <p>?Are you sure you want to delete these Records</p>
+                    <p class="text-warning"><small>This action cannot be undone</small></p>
+                </div>
+                <div class="modal-footer">
+                    <button  class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button class="btn btn-danger" (click)="peopleService.deleteChildren();" value="Delete">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    <script src="/src/assets/js/fuction.js"></script>
+

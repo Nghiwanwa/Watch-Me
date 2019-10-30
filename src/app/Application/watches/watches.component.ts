@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { WatchesService } from '../services/watches.service';
+import { Watches } from '../models/watches';
 
 @Component({
   selector: 'app-watches',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WatchesComponent implements OnInit {
 
-  constructor() { }
+  constructor(public watchesService: WatchesService) { }
 
   ngOnInit() {
+    this.watchesService.getWatches();
+  }
+
+  newWatch(){
+    this.watchesService.selectedWatch = new Watches();
   }
 
 }

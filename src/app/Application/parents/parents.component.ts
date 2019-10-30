@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PeopleService } from '../services/people.service';
 
 @Component({
   selector: 'app-parents',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public peopleService: PeopleService) { }
 
   ngOnInit() {
+    this.peopleService.getParents();
   }
 
 }

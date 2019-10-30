@@ -22,12 +22,12 @@
                 <div class="col-12">
                     <div class="card m-b-30">
                         <div class="card-body">
-                                <form class="form-inline md-form form-sm">
+                            <form class="form-inline md-form form-sm" action ="action_page.php" method = "get">
                                         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                                         <button class="btn btn-primary" type="submit">Search</button>
                                     </form>
                                     <div class="text-right">
-                                            <a href="#editSystemUsers" class="btn btn-success" data-toggle="modal"> <span>Add Child<i class="fa fa-user"></i> </span></a>
+                                        <a href="javascript:;" class="btn btn-success" (click)="newChildren()" data-toggle="modal" data-target="#addchild"> Add Child<i class="fa fa-user"></i> </a>
                                             
                                         </div>
                           <br>
@@ -44,41 +44,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                            <th>Female</th>
-                                            <th>2012/06/14</th>
-                                            <th>Rosalia</th>
-                                            <th>Paulus</th>
+                                    <tr *ngFor="let children of peopleService.child">
+                                            <td>{{children.gender}}</td>
+                                            <td>{{childen.date_of_birth}}</td>
+                                            <td>{{children.lname}}</td>
+                                            <td>{{children.fname}}</td>
                                             <td>
-                                                    <a href="#editSystemUsers" class="edit" data-toggle="modal"><i class="fa fa-edit" data-toggle="tooltip" title="Edit"></i></a>
-                                           </td>
-                                        <td>
-                                            <a href="#Parent" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                            <th>Male</th>
-                                            <th>2015/01/13</th>
-                                            <th>Nelson</th>
-                                            <th>Haihambo</th>
+                                                <a href="javascript:;" (click)="peopleService.selectedChildren=child"  class="edit" data-toggle="modal" data-target="#addchild"><i class="fa fa-edit" data-toggle="tooltip" title="Edit"></i></a>
+                                            </td>
                                             <td>
-                                                    <a href="#editSystemUsers" class="edit" data-toggle="modal"><i class="fa fa-edit" data-toggle="tooltip" title="Edit"></i></a>
-                                           </td>
-                                        <td>
-                                            <a href="#Parent" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                            <th>Female</th>
-                                            <th>2014/08/29</th>
-                                            <th>Anna</th>
-                                            <th>Herman</th>
-                                            <td>
-                                                    <a href="#editSystemUsers" class="edit" data-toggle="modal"><i class="fa fa-edit" data-toggle="tooltip" title="Edit"></i></a>
-                                           </td>
-                                        <td>
-                                            <a href="#Parent" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
-                                        </td>
+                                                <a href="javascript:;" (click)="peopleService.selectedChildren=child"  class="delete" data-toggle="modal" data-target="#deletechild"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
+                                            </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -93,7 +69,8 @@
         <!-- end container-fluid -->
     </div>
     <!-- end wrapper -->
-    
+</div> 
+
     <script>
         $('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
     </script>
@@ -101,74 +78,69 @@
     <app-footer></app-footer>
     
   
-     <!-- Delete Modal HTML -->
-    <div id="Parent" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form>
-                        <div class="modal-header">						
-                            <h4 class="modal-title">Delete Child</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body">					
-                            <p>?Are you sure you want to delete these Records</p>
-                            <p class="text-warning"><small>This action cannot be undone.</small></p>
-                        </div>
-                        <div class="modal-footer">
-                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                            <input type="submit" class="btn btn-danger" value="Delete">
-                        </div>
-                    </form>
+     <!-- Edit Modal HTML -->
+  <div id="addchild" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">						
+                    <h4 class="modal-title">Child</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
-            </div>
-        </div>
-        <!-- modal  -->
-
-  <!-- Edit Modal HTML -->
-  <div id="editSystemUsers" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form>
-                    <div class="modal-header">						
-                        <h4 class="modal-title">Edit Child's details</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">					
-                        <div class="form-row mb-4">
-                            <div class="col">
-                                <!-- Card Number -->
-                                <input type="text" id="Firstname" class="form-control" required placeholder="Firstname">
-                            </div>  
-
-                        </div>
-                        
-                        <div class="form-row mb-4">
-                                <div class="col">
-                                    <!-- user name -->
-                                    <input type="text" id="Lastname" class="form-control" required placeholder="Lastname">
-                                </div>    
-                        </div>
+                <div class="modal-body">					
+                
                     <div class="form-row mb-4">
                             <div class="col">
-                                    <select class="custom-select custom-select-sm">
-                                            <option selected>Gender</option>
-                                            <option value="1">Male</option>
-                                            <option value="2">False</option>
-                                         </select>
-                             </div>  
-                             <div class="col">
-                                    <!-- Date -->
-                                    <input type="date" id="Date" class="form-control" required placeholder="Date">
-                                </div>  
-                     </div>       
+                                <!-- user name -->
+                                <input type="text"  name="_firstname" [(ngModel)]="peopleService.selectedChildren.firstname" class="form-control" required placeholder="Firstname">
+                            </div>
+                            <div class="col">
+                                <!-- Card address -->
+                                <input type="text" name="_lastname" [(ngModel)]="peopleService.selectedChildren.lastname" class="form-control" required placeholder="Lastname">
+                            </div>
+                        </div>
+                        <div class="form-row mb-4">
+                            <div class="col">
+                                <!-- Card address -->
+                                <input type="date" name="_dateofbirth" [(ngModel)]="peopleService.selectedChildren.dateofbirth" class="form-control" required placeholder="Date of Birth">
+                            </div>
+                        </div>
+                    <div class="form-row mb-4">
+                        <div class="col">
+                            <select class="custom-select custom-select-sm" name="_gender" [(ngModel)]="peopleService.selectedChildren.gender">
+                                <option *ngFor="let gender of peopleService.gender" [value]="gender">{{gender}}</option>
+                            </select>
+                      </div>
                     </div>
-                    
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-info" value="Save">
-                    </div>
-                </form>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal" value="Cancel"></button>
+                    <button class="btn btn-info" [hidden]="peopleService.selectedChildren._id" (click)="peopleService.addChildren();">Save</button>
+                    <button class="btn btn-info" [hidden]="!peopleService.selectedChildren._id" (click)="peopleService.updateChildren();">Update</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
+<!-- Delete Modal HTML -->
+<div id="deletechild" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">						
+                    <h4 class="modal-title">Delete Child</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">					
+                    <p>?Are you sure you want to delete these Records</p>
+                    <p class="text-warning"><small>This action cannot be undone</small></p>
+                </div>
+                <div class="modal-footer">
+                    <button  class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button class="btn btn-danger" (click)="peopleService.deleteChildren();" value="Delete">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
         <script src="/src/assets/js/fuction.js"></script>
