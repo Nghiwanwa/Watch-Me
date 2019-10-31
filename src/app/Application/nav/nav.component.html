@@ -135,25 +135,30 @@
                 <ul class="navigation-menu">
 
                   
-                    <li class="has-submenu">
+                    <li (click)="goTo('geofences')"  class="has-submenu">
                             <a href="#/geofences"><i class="icon-geolocalizator"></i> Geo-fencing</a>
                     </li>
-                    <li class="has-submenu">
+                    <li (click)="goTo('users')" class="has-submenu">
                             <a href="#/users"><i class="icon-profile-add"></i> Users</a>
                     </li>
-                    <li class="has-submenu">
+                    <li (click)="goTo('parents')" class="has-submenu">
                         <a href="#/parents"><i class="icon-profile"></i> Parents </a>
                    
                     </li>
 
-                    <li class="has-submenu">
+                    <li (click)="goTo('children')" class="has-submenu">
                         <a href="#/children"><i class="icon-profile-remove"></i> Children </a>
                  
                     </li>
 
-                    <li class="has-submenu">
+                    <li (click)="goTo('map')" class="has-submenu">
                         <a href="#"><i class="icon-globe"></i> Map </a>
                      
+                    </li>
+                  
+                    <li (click)="goTo('sos')" class="has-submenu">
+                        <a href="javascript:;"><i class="icon-multiple-image"></i>SOS</a>
+                 
                     </li>
 
                     <li (click)="goTo('dashboard')" class="has-submenu">

@@ -23,56 +23,41 @@
                 <div class="card m-b-30">
                     <div class="card-body">
                         <div class="text-right">
-                          <a href="#editSystemUsers" class="btn btn-success" data-toggle="modal"> <span>Add User<i class="fa fa-user"></i> </span></a>
+                                <form class="form-inline md-form form-sm">
+                                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                                        <button class="btn btn-primary" type="submit">Search</button>
+                                </form>
+
+                          <a href="javascript:;" class="btn btn-success" (click)="newUser()" data-toggle="modal" data-target="#adduser"> Add User<i class="fa fa-user"></i> </a>
                           
                       </div>
                       <br>
                         <table id="mainTable" class="table table-striped mb-0 table-editable">
                             <thead>
                                 <tr>
-                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Full Name</th>
                                     <th>Username</th>
-                                    <th>Fullname</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                    
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Superuser</td>
-                                    <td>Paula</td>
-                                    <td>Pombili</td>
+                                <tr *ngFor="let user of peopleService.users">
+                                    <td>{{user.role}}</td>
+                                    <td>{{user.fullname}}</td>
+                                    <td>{{user.username}}</td>
  
                                     <td>
-                                        <a href="#editSystemUsers" class="edit" data-toggle="modal"><i class="fa fa-edit" data-toggle="tooltip" title="Edit"></i></a>
+                                        <a href="javascript:;" (click)="peopleService.selectedUser=user"  class="edit" data-toggle="modal" data-target="#adduser"><i class="fa fa-edit" data-toggle="tooltip" title="Edit"></i></a>
                                       </td>
                                     <td>
-                                        <a href="#deleteSystemUsers" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
+                                        <a href="javascript:;" (click)="peopleService.selectedUser=user"  class="delete" data-toggle="modal" data-target="#deleteuser"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>user</td>
-                                    <td>Imms</td>
-                                    <td>{{lname}}</td>
-                                    <td>
-                                            <a href="#editSystemUsers" class="edit" data-toggle="modal"><i class="fa fa-edit" data-toggle="tooltip" title="Edit"></i></a>
-                                   </td>
-                                    <td>
-                                            <a href="#deleteSystemUsers" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
-                                 </td>
-                                </tr>
-                                <tr>
-                                    <td>user</td>
-                                    <td>Dee</td>
-                                    <td>Tomas</td>
-                                    <td>
-                                            <a href="#editSystemUsers" class="edit" data-toggle="modal"><i class="fa fa-edit" data-toggle="tooltip" title="Edit"></i></a>
-                                   </td>
-                                    <td>
-                                            <a href="#deleteSystemUsers" class="delete" data-toggle="modal"><i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i></a>
-                                 </td>
-                                </tr>
+                                
+                                
                             </tbody>
                         </table>
 
@@ -96,69 +81,50 @@
 
 <!-- modal  -->
   <!-- Edit Modal HTML -->
-  <div id="editSystemUsers" class="modal fade">
+  <div id="adduser" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form>
                     <div class="modal-header">						
-                        <h4 class="modal-title">Edit User details</h4>
+                        <h4 class="modal-title">User</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">					
-                    <div class="form-row mb-4">
-                            <div class="col">
-                                <!-- Card Number -->
-                                <input type="text" id="Fullname" class="form-control" required placeholder="Fullname">
-                            </div>
-            
-                        </div>
+                    
                         <div class="form-row mb-4">
                                 <div class="col">
                                     <!-- user name -->
-                                    <input type="text" id="Username" class="form-control" required placeholder="User Name">
+                                    <input type="text"  name="_username" [(ngModel)]="peopleService.selectedUser.username" class="form-control" required placeholder="Username">
                                 </div>
                                 <div class="col">
                                     <!-- Card address -->
-                                    <input type="text" id="email" class="form-control" required placeholder="Email">
+                                    <input type="text" name="_fullname" [(ngModel)]="peopleService.selectedUser.fullname" class="form-control" required placeholder="Full Name">
                                 </div>
                             </div>
-                        <div class="form-row mb-4">
-                                <div class="col">
+                            <div class="form-row mb-4">
+                                <div class="col" [hidden]="peopleService.selectedUser._id">
                                     <!-- Card Number -->
-                                    <input type="password" id="password" class="form-control" required placeholder="Password">
+                                    <input type="password" name="_password" [(ngModel)]="peopleService.selectedUser.password" class="form-control" required placeholder="Password">
                                 </div>
+
                                 <div class="col">
-                                    <!-- Card address -->
-                                    <input type="password" id="Confirmpassword" class="form-control" required placeholder="Confirm Password">
-                                </div>
+                                        <select class="custom-select custom-select-sm" name="_role" [(ngModel)]="peopleService.selectedUser.role">
+                                            <option *ngFor="let role of peopleService.roles" [value]="role">{{role}}</option>
+                                        </select>
+                                  </div>
                             </div>
-                          <div class="form-row mb-4">
-                                    <div class="col">
-                                            <select class="custom-select custom-select-sm">
-                                                    <option selected>Gender</option>
-                                                    <option value="1">Male</option>
-                                                    <option value="2">False</option>
-                                                 </select>
-                                     </div>
-                                    <div class="col">
-                                 <select class="custom-select custom-select-sm">
-                                    <option selected>Role</option>
-                                    <option value="1">Superuser</option>
-                                    <option value="2">User</option>
-                                 </select>
-                              </div>
-                          </div>
                     </div>
                     <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-info" value="Save">
+                        <button class="btn btn-default" data-dismiss="modal" value="Cancel"></button>
+                        <button class="btn btn-info" [hidden]="peopleService.selectedUser._id" (click)="peopleService.addUser();">Save</button>
+                        <button class="btn btn-info" [hidden]="!peopleService.selectedUser._id" (click)="peopleService.updateUser();">Update</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
     <!-- Delete Modal HTML -->
-    <div id="deleteSystemUsers" class="modal fade">
+    <div id="deleteuser" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form>
@@ -168,11 +134,11 @@
                     </div>
                     <div class="modal-body">					
                         <p>?Are you sure you want to delete these Records</p>
-                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                        <p class="text-warning"><small>This action cannot be undone</small></p>
                     </div>
                     <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-danger" value="Delete">
+                        <button  class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button class="btn btn-danger" (click)="peopleService.deleteUser();" value="Delete">Delete</button>
                     </div>
                 </form>
             </div>
