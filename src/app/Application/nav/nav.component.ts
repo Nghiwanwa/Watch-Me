@@ -19,6 +19,7 @@ export class NavComponent implements OnInit {
   }
 
 
+// Navigate Roting 
 
   goTo(link){
       this.route.navigate([link]);
