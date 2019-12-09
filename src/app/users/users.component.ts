@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PeopleService } from '../Application/services/people.service';
+import { User } from '../Application/models/user';
 
 @Component({
   selector: 'app-users',
@@ -8,11 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class UsersComponent implements OnInit {
 
 
-  lname ="Immaneul Fransiskus";
-  fname="toms";
-  constructor() { }
+ 
+  constructor(public peopleService: PeopleService) { }
 
   ngOnInit() {
+    this.peopleService.getUsers();
+  }
+
+  newUser(){
+    this.peopleService.selectedUser = new User();
   }
 
 }

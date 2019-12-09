@@ -4,7 +4,7 @@ import { User } from '../models/user';
 import { HttpClient } from '@angular/common/http';
 import { Parents } from '../models/parents';
 import { Children } from '../models/children';
-
+import { Sos } from '../models/sos';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +19,9 @@ export class PeopleService {
 
   selectedChildren = new Children();
   child = new Array<Children>();
+
+  selectedSos = new Sos();
+  sos = new Array<Sos>(); 
 
   roles = [
     'Super User',
@@ -147,6 +150,43 @@ export class PeopleService {
       child => {
         this.selectedChildren = child;
         this.getChildren();
+      }
+    )
+  }
+
+  addSoS(){
+    this.http.post<Sos>(this.rest.REST_ENDPOINT+"/soses", this.selectedSos).subscribe(
+      sos => {
+        this.selectedSos = sos;
+        this.getSoS();
+      }
+    )
+  }
+
+  getSoS(){
+
+      this.http.get<Array<Sos>>(this.rest.REST_ENDPOINT+"/soses").subscribe(
+        sos => {
+          this.sos = sos;
+        }
+      )
+  }
+
+  updateSoS(){
+    this.http.put<Sos>(this.rest.REST_ENDPOINT+"/soses/"+this.selectedSos._id,this.selectedSos).subscribe(
+      sos => {
+        this.selectedSos = sos;
+        this.getSoS();
+      }
+    )
+  }
+
+  deleteSoS(){
+    this.selectedSos.deleted = true;
+    this.http.put<Sos>(this.rest.REST_ENDPOINT+"/soses/"+this.selectedSos._id,this.selectedSos).subscribe(
+      sos => {
+        this.selectedSos = sos;
+        this.getSoS();
       }
     )
   }

@@ -9,6 +9,8 @@ import { UsersComponent } from './users/users.component';
 import { ParentsComponent } from './Application/parents/parents.component';
 import { WatchesComponent } from './Application/watches/watches.component';
 import { ChildrenComponent } from './Application/parents/children/children.component';
+import { GeofencesComponent } from './Application/geofences/geofences.component';
+import { SOSComponent } from './Application/sos/sos.component';
 
 
 
@@ -50,6 +52,18 @@ const routes: Routes = [
     path:"children",
     component:ChildrenComponent
     },
+    {
+    path:"geofences",
+    component:GeofencesComponent
+    },
+    {
+      path:"sos",
+      component:SOSComponent
+      },
+    {
+      path:"map",
+      component:MapComponent
+      },
   {
     path: '',
     redirectTo:'/login',
