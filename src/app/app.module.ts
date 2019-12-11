@@ -51,7 +51,8 @@ import { SOSComponent } from './Application/sos/sos.component';
     HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey:'AIzaSyD0evbOej4bdm3ZeF_kDaxBGQSiCPDCMRQ'
-    })
+    }),
+    
   ],
   providers: [
     PeopleService,

@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './Application/dashboard/dashboard.component';
 import { LoginComponent } from './Application/login/login.component';
 import { SignupComponent } from './Application/signup/signup.component';
-import { MapComponent } from './Application/map/map.component';
 import { LandingComponent } from './Application/landing/landing.component';
 import { UsersComponent } from './users/users.component';
 import { ParentsComponent } from './Application/parents/parents.component';
@@ -11,6 +10,7 @@ import { WatchesComponent } from './Application/watches/watches.component';
 import { ChildrenComponent } from './Application/parents/children/children.component';
 import { GeofencesComponent } from './Application/geofences/geofences.component';
 import { SOSComponent } from './Application/sos/sos.component';
+import { MapComponent } from './Application/map/map.component';
 
 
 
@@ -59,16 +59,16 @@ const routes: Routes = [
     {
       path:"sos",
       component:SOSComponent
-      },
+    },
     {
       path:"map",
       component:MapComponent
-      },
-  {
-    path: '',
-    redirectTo:'/login',
-    pathMatch:'full'
-  }
+    },
+    {
+      path: '',
+      redirectTo:'/login',
+      pathMatch:'full'
+    }
 ];
 
 @NgModule({
